@@ -1,0 +1,53 @@
+import random
+list_a = list(["D 0","D 1","D 2","D 3"])
+def rolldice(min,max):
+    x = 1
+    while x < 1000001:
+        ("Attempt", x, "Start")
+        x = x + 1
+        ("Rolling dice")
+        number1 = random.randint(min, max)
+        number2 = random.randint(min, max)
+        number3 = random.randint(min, max)
+        number4 = random.randint(min, max)
+        number5 = random.randint(min, max)
+        number6 = random.randint(min, max)
+
+        attacker = [number1, number2, number3]
+        defender = [number4, number5, number6]
+        s_attacker = sorted(attacker, reverse =True)
+        s_defender = sorted(defender, reverse =True)
+        (f"Attacker {number1}, {number2}, {number3}")
+        (f"Defender {number4}, {number5}, {number6}")
+        (f"Sorted Attacker", s_attacker)
+        (f"Sorted Defender", s_defender)
+        if s_defender[0] >= s_attacker[0]:
+            num3 = +0
+        else:
+            num3 = +1
+        if s_defender[1] >= s_attacker[1]:
+            num2 = +0
+        else:
+            num2 = +1
+        if s_defender[2] >= s_attacker[2]:
+            num1 = +0
+        else:
+            num1 = +1
+       # print("D",num1+num2+num3)
+        if num1+num2+num3 == 0:
+            list_a.append("D 0")
+        elif num1+num2+num3 == 1:
+            list_a.append("D 1")
+        elif num1+num2+num3 == 2:
+            list_a.append("D 2")
+        elif num1+num2+num3 == 3:
+            list_a.append("D 3")
+        else:
+            "error"
+        ("Attempt", x-1, "End")
+rolldice(1, 6)
+
+print("Defender loses 0 Attacker loses 3", list_a.count("D 0"))
+print("Defender loses 1 Attacker loses 2", list_a.count("D 1"))
+print("Defender loses 2 Attacker loses 1", list_a.count("D 2"))
+print("Defender loses 3 Attacker loses 0", list_a.count("D 3"))
